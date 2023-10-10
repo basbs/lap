@@ -1,0 +1,14 @@
+# Final stage
+FROM alpine:latest
+# Install runtime dependencies
+ADD bootstrap-alpine.sh /bstrp.sh
+RUN chmod +x /bstrp.sh
+# Create a new user with limited privilege
+#RUN adduser -D lap && echo "lap:lap" | chpasswd
+#USER lap
+#
+## Set the working directory
+#WORKDIR /home/lap
+#
+# Start your application
+ENTRYPOINT ["/bstrp.sh"]

@@ -1,0 +1,31 @@
+FROM alpine:latest
+
+# Set noninteractive mode
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update package repositories and install required packages
+RUN apk update && apk add --no-cache \
+    gcc \
+    git \
+    openssh \
+    wget \
+    curl \
+    emacs \
+    vim \
+    python3 \
+    py3-pip \
+    openmpi \
+    libxml2-utils \
+    jq
+
+# Create a new user with limited privilege
+RUN adduser -D lap && echo "lap:lap" | chpasswd
+
+# Set the working directory
+WORKDIR /home/lap
+
+# Switch to the normal user
+USER lap
+
+# Start your application
+CMD ["/bin/sh"]

@@ -23,21 +23,11 @@ apt-get install -y --no-install-recommends \
     ssh \
     wget \
     curl \
-    less \
-    emacs \
     vim \
-    python3 \
-    python3-pip \
     openmpi-bin \
     openmpi-common \
     openmpi-doc \
-    libopenmpi-dev \
-    libperl-version-perl \
-    libxml-parser-perl \
-    libjson-pp-perl \
-    libexpat1-dev \
-    libxml2-utils \
-    jq || { echo "Failed to install required packages"; exit 1; }
+    libopenmpi-dev || { echo "Failed to install required packages"; exit 1; }
 
 # Create group and user
 groupadd -r lap || { echo "Failed to create group"; exit 1; }

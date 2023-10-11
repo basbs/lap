@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     libxml-parser-perl \
     libjson-pp-perl \
     libxml2-utils \
+    libexpat1-dev \
     jq && \
     rm -rf /var/lib/apt/lists/*
 

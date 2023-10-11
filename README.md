@@ -1,4 +1,4 @@
-# Lattice practice image
+# Lattice practices image
 
 ## Usage
 
@@ -14,7 +14,7 @@ docker run --name lap -dt machine1919/lap:latest
 - To restart `docker restart lap`
 - To stop and remove the container (**all your data inside the container will be gone**) `docker rm -f lap`
 
-### Save changes on your container
+### Save changes on your container (run this at host not inside container)
 To save your current container state as a new image.
 ```shell
 docker commit -m="My own lap image" lap mylap:latest

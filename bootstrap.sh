@@ -33,6 +33,7 @@ apt-get install -y --no-install-recommends \
     libperl-version-perl \
     libxml-parser-perl \
     libjson-pp-perl \
+    libexpat1-dev \
     libxml2-utils \
     jq || { echo "Failed to install required packages"; exit 1; }
 
@@ -50,3 +51,4 @@ su - lap -c 'cd $HOME && \
 
 # Clone try-client repository
 su - lap -c 'git clone https://gitlab.desy.de/ildg/hands-on/try-client.git' || { echo "Failed to clone try-client repository"; exit 1; }
+su - lap

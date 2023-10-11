@@ -20,6 +20,19 @@ To save your current container state as a new image.
 docker commit -m="My own lap image" lap mylap:latest
 ```
 
+## Run using base image
+```shell
+git clone https://github.com/basbs/lap.git
+docker run --name lap -dt -v ./lap/:/tmp/lap ubuntu:latest
+docker exec -it lap /bin/bash
+# Inside the container
+chmod +x /tmp/lap/bootstrap.sh
+/tmp/lap/bootstrap.sh
+cd 
+make -C openQCD-2.0/main/ GCC=mpicc
+mkdir log dat cnfg
+mpirun -n 2 openQCD-2.0/main/qcd1 -i /tmp/lap/qcd1.in
+```
 
 ## Useful commands during workshop
 - To compile execute the openQCD sources 

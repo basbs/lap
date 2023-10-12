@@ -8,8 +8,8 @@ git clone https://github.com/basbs/lap.git
 ## Option 1: Run container from base image (80 MB) and customize (150 MB)
 ```shell
 docker run --name lap -dt -v "$(pwd)/lap:/tmp/lap" ubuntu:latest
-chmod +x lap/bootstrap.sh
-docker exec -it lap /tmp/lap/bootstrap.sh
+chmod +x lap/bootstrap0.sh
+docker exec -it lap /tmp/lap/bootstrap0.sh
 # Re-connect
 docker exec -it lap /bin/su - lap
 ```

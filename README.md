@@ -11,7 +11,7 @@ docker run --name lap -dt -v "$(pwd)/lap:/tmp/lap" ubuntu:latest
 chmod +x lap/bootstrap.sh
 docker exec -it lap /tmp/lap/bootstrap.sh
 # Re-connect
-docker exec -u lap -it lap /bin/bash
+docker exec -it lap /bin/su - lap
 ```
 
 ## Option 2: Run container from a pre-built image (750 MB)
